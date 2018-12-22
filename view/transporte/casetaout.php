@@ -10,7 +10,18 @@
 
   <div class="form-group">
       <label>Folio</label>
-      <input type="text" name="Folio" value="Salvador de la Cruz" class="form-control">
+      <input type="text" name="Folio" value="<?php echo $alm->Folio; ?>" required class="form-control" placeholder="Folio" />
+  </div>
+
+  <div class="form-group">
+      <label>Estatus</label>
+      <select name="Estatus5" class="form-control">
+          <option value="Liberado de Cedic">Liberado de Cedic</option>
+          <option value="Incidencia">Incidencia</option>
+      </select>
+  </div>
+
+    <input type="hidden" name="Usuario5" value="Salvador de la Cruz" class="form-control">
 
     <div class="form-group">
         <label>Observaciones</label>

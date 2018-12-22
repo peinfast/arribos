@@ -47,10 +47,9 @@
     echo $nombre;
     ?>"  class="form-control">
 
-    <div class="form-group">
-        <label>Observaciones</label>
-        <input type="text" name="Observaciones4" value="<?php echo $alm->Observaciones3; ?>" required class="form-control" placeholder="Observaciones" />
-    </div>
+    <label>Observaciones</label>
+    <br/ >
+    <textarea name="Observaciones4" rows="15" cols="100" placeholder="Observaciones"></textarea>
 
     <hr />
 

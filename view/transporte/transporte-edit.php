@@ -1,11 +1,6 @@
 <h1 class="page-header">
 </h1>
 
-<ol class="breadcrumb">
-  <li><a href="?c=Transporte">Folio</a></li>
-  <li class="active"><?php echo $alm->id != null ? $alm->Folio : 'Nuevo Registro'; ?></li>
-</ol>
-
 <form id="frm-transporte" action="?c=Transporte&a=Guardame" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $alm->id; ?>" />
 
