@@ -25,6 +25,8 @@ class Transporte
     public $FH_Inicio_CarDesc;
     public $Usuario3;
 		public $Estatus3;
+		public $Transporte;
+		public $Operador;
 		public $Observaciones3;
     public $FH_Conclu_CarDesc;
     public $Usuario4;
@@ -69,7 +71,103 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Estatus5!='Liberado de Cedic' and FH_Carga!='0000-00-00 00:00:00' and Estatus2='En patio' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Estatus5!='Liberado de Cedic' and FH_Carga!='0000-00-00 00:00:00' and Estatus2='En patio' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function azulL1b()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Area='L1bre' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function azulLI()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function azulMov()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Area='Movilidad' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function azulPro()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Area='Proyectos' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function azulRec()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Area='Recibo' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	public function azulRet()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE Area='Retail' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -117,7 +215,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -319,22 +417,6 @@ class Transporte
 			die($e->getMessage());
 		}
 	}
-	public function azulRec()
-	{
-		try
-		{
-			$result = array();
-
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Recibo' and Estatus5 != 'Liberado de Cedic' and Estatus2='En patio' order by FH_Carga ");
-			$stm->execute();
-
-			return $stm->fetchAll(PDO::FETCH_OBJ);
-		}
-		catch(Exception $e)
-		{
-			die($e->getMessage());
-		}
-	}
 	public function rojoRec()
 	{
 		try
@@ -509,14 +591,14 @@ class Transporte
 			$sql = "UPDATE folios  SET Estatus2 = ?, FH_Arribo = now(), Usuario2 = ?, Observaciones2 = ? WHERE Folio = ?";
 			$mail = "Prueba de mensaje";
 			//Titulo
-			$titulo = "Cambio de Estatus del Folio: ".$Folio;
+			$titulo = "Cambio de Estatus del Folio: ".$Folio." a En patio";
 			//cabecera
 			$headers = "Control de Arribos-Version: 1.0\r\n";
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 			//dirección del remitente
-			$headers .= "From: Control de Arribos < Diego.Hernandez@ingrammicro.com >\r\n";
+			$headers .= "From: Control de Arribos < peinfast@gmail.com >\r\n";
 			//Enviamos el mensaje a tu_dirección_email
-			$bool = mail("peinfast@gmail.com",$titulo,$mail,$headers);
+			$bool = mail("Diego.Hernandez@ingrammicro.com",$titulo,$mail,$headers);
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
@@ -542,13 +624,15 @@ class Transporte
 
 		try
 		{
-			$sql = "UPDATE folios  SET Estatus3 = ?, Cortina = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus3 = ?, Transporte = ?, Operador = ?, Cortina = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Estatus3,
+							$data->Transporte,
+							$data->Operador,
 							$data->Cortina,
 							$data->Usuario3,
 							$data->Observaciones3,

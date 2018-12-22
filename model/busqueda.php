@@ -32,6 +32,9 @@
         echo 'Marca: '.$row['Marca'].'<br />';
         echo 'Destino: '.$row['Destino'].'<br />';
         echo 'Servicio: '.$row['Servicio'].'<br />';
+        echo 'Fecha y hora por llegar: '.$row['FH_Carga'].'<br />';
+        echo 'Transporte: '.$row['Transporte'].'<br />';
+        echo 'Operador: '.$row['Operador'].'<br />';
         echo 'Cantidad de Unidades: '.$row['CantidadUnidades'].'<br />';
         echo 'Cortina: '.$row['Cortina'].'<br />';
         echo 'Estatus del Producto: '.$row['EstatusProducto'].'<br />';

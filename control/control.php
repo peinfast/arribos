@@ -25,7 +25,7 @@ $db = new mysqli($db_host, $db_user, $db_pass, $database);
              while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
              {
                //Insertamos los datos con los valores...
-                $sql =$db->query ("INSERT into folios(Folio, Area, Cliente, Marca, Destino, Servicio, FH_Carga,Estatus) values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','Por arribar')");
+                $sql =$db->query ("INSERT into folios(Folio, Area, Cliente, Marca, Destino, Servicio, FH_Carga,Estatus,FH_Cedic) values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','Por arribar', now())");
 
              }
              //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"

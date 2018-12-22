@@ -503,6 +503,8 @@ class TransporteController{
         $alm->Cortina = $_REQUEST['Cortina'];
         $alm->Usuario3 = $_REQUEST['Usuario3'];
         $alm->Estatus3 = $_REQUEST['Estatus3'];
+        $alm->Transporte = $_REQUEST['Transporte'];
+        $alm->Operador = $_REQUEST['Operador'];
         $alm->Observaciones3 = $_REQUEST['Observaciones3'];
         $alm->Folio = $_REQUEST['Folio'];
 
