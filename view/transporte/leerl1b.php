@@ -1,20 +1,17 @@
 <h1 class="page-header"></h1>
 
-<div class="well well-sm text-right">
-</div>
-
+<div id="mytable">
 <table>
     <thead>
         <tr>
-            <th style="width:180px;">Folio</th>
-            <th style="width:120px;">Area</th>
-            <th style="width:120px;">Cliente</th>
-            <th style="width:120px;">Marca</th>
-            <th style="width:120px;">Destino</th>
-            <th style="width:120px;">Servicio</th>
-            <th style="width:120px;">FH Carga</th>
-            <th style="width:120px;">Estatus</th>
-
+          <th style="width:180px;">Folio</th>
+          <th style="width:120px;">Area</th>
+          <th style="width:120px;">Cliente</th>
+          <th style="width:120px;">Marca</th>
+          <th style="width:120px;">Destino</th>
+          <th style="width:120px;">Servicio</th>
+          <th style="width:120px;">FH Carga</th>
+          <th style="width:120px;">Estatus</th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +24,6 @@
               <td><?php echo $r->Destino; ?></td>
               <td><?php echo $r->Servicio; ?></td>
               <td><?php echo $r->FH_Carga; ?></td>
-              <td><?php echo $r->EstatusProducto; ?></td>
               <td><?php
               if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                   echo $r->Estatus;
@@ -133,3 +129,4 @@
       <?php endforeach; ?>
     </tbody>
 </table>
+</div>

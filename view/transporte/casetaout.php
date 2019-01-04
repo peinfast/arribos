@@ -15,10 +15,7 @@
 
   <div class="form-group">
       <label>Estatus</label>
-      <select name="Estatus5" class="form-control">
-          <option value="Liberado de Cedic">Liberado de Cedic</option>
-          <option value="Incidencia">Incidencia</option>
-      </select>
+      <input type="text" name="Estatus5" value="Liberado de Cedic" readonly="readonly" required class="form-control" />
   </div>
 
     <input type="hidden" name="Usuario5" value="Salvador de la Cruz" class="form-control">

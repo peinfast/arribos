@@ -20,49 +20,22 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function Eliminar(){
-        $dbHost = 'localhost';
-        $dbUsername = 'root';
-        $dbPassword = '';
-        $dbName = 'cargamentos';
-
-        //Create connection and select DB
-        $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-        if ($db->connect_error) {
-            die("Unable to connect database: " . $db->connect_error);
-        }
-        $dni=$_REQUEST['id'];
-        $query = $db->query("SELECT Area FROM folios WHERE id='$dni'");
-        $row = mysqli_fetch_array($query);
-        $direarea=$row['Area'];
-        if ($direarea=="L1bre") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesl1b.php');
-        }
-        if ($direarea=="Logistica Inversa") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesli.php');
-        }
-        if ($direarea=="Movilidad") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesmov.php');
-        }
-        if ($direarea=="Proyectos") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionespro.php');
-        }
-        if ($direarea=="Recibo") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesrec.php');
-        }
-        if ($direarea=="Retail") {
-          $this->model->Eliminar($_REQUEST['id']);
-          header('Location: operacionesret.php');
-        }
+      $this->model->Eliminar($_REQUEST['id']);
+      header("Location:".$_SERVER['HTTP_REFERER']);
     }
     public function General(){
         require_once 'view/arriba.php';
         require_once 'view/transporte/transporte.php';
+        require_once 'view/footer.php';
+    }
+    public function Editarcarfin(){
+        require_once 'view/cab.php';
+        require_once 'view/transporte/editcar.php';
+        require_once 'view/footer.php';
+    }
+    public function Editcar(){
+        require_once 'view/cab.php';
+        require_once 'view/transporte/fincar.php';
         require_once 'view/footer.php';
     }
     public function OperacionesL1b(){
@@ -436,24 +409,9 @@ class TransporteController{
             ? $this->model->Actualizame($alm)
             : $this->model->Actualizame($alm);
 
-        if ($alm->Area=="L1bre") {
-                header('Location: operacionesl1b.php');
-        }
-        if ($alm->Area=="Logistica Inversa") {
-                header('Location: operacionesli.php');
-        }
-        if ($alm->Area=="Movilidad") {
-                header('Location: operacionesmov.php');
-        }
-        if ($alm->Area=="Proyectos") {
-                header('Location: operacionespro.php');
-        }
-        if ($alm->Area=="Recibo") {
-                header('Location: operacionesrec.php');
-        }
-        if ($alm->Area=="Retail") {
-            header('Location: operacionesret.php');
-        }
+
+        header("Location:".$_SERVER['HTTP_REFERER']);
+
     }
     public function GActua(){
         $alm = new Transporte();

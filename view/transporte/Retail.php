@@ -4,6 +4,7 @@
     <thead>
         <tr>
           <th style="width:180px;">Folio</th>
+          <th style="width:180px;">Area</th>
           <th style="width:180px;">Cliente</th>
           <th style="width:180px;">Marca</th>
           <th style="width:180px;">Destino</th>
@@ -24,7 +25,6 @@
               <td><?php echo $r->Destino; ?></td>
               <td><?php echo $r->Servicio; ?></td>
               <td><?php echo $r->FH_Carga; ?></td>
-              <td><?php echo $r->EstatusProducto; ?></td>
               <td><?php
               if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                   echo $r->Estatus;
@@ -47,6 +47,7 @@
       <?php foreach($this->model->rojoRet() as $r): ?>
           <tr style="background-color: tomato;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -80,6 +81,7 @@
       <?php foreach($this->model->amarilloRet() as $r): ?>
           <tr style="background-color: yellow;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -113,6 +115,7 @@
       <?php foreach($this->model->verdeRet() as $r): ?>
           <tr style="background-color: green;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>

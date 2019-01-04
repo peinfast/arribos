@@ -12,10 +12,7 @@
 
   <div class="form-group">
       <label>Estatus</label>
-      <select name="Estatus3" class="form-control">
-          <option value="En proceso de Carga y Descarga">En proceso de Carga y Descarga</option>
-          <option value="Incidencia">Incidencia</option>
-      </select>
+      <input type="text" name="Estatus3" value="En proceso de Carga/Descarga" readonly="readonly" required class="form-control" />
   </div>
 
   <div class="form-group">

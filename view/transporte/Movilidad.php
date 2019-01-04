@@ -4,6 +4,7 @@
     <thead>
         <tr>
           <th style="width:180px;">Folio</th>
+          <th style="width:180px;">Area</th>
           <th style="width:180px;">Cliente</th>
           <th style="width:180px;">Marca</th>
           <th style="width:180px;">Destino</th>
@@ -24,7 +25,6 @@
               <td><?php echo $r->Destino; ?></td>
               <td><?php echo $r->Servicio; ?></td>
               <td><?php echo $r->FH_Carga; ?></td>
-              <td><?php echo $r->EstatusProducto; ?></td>
               <td><?php
               if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                   echo $r->Estatus;
@@ -42,11 +42,18 @@
                   echo $r->Estatus5;
               }
                ?></td>
+               <td style="background-color: white;">
+                    <a href="?c=Transporte&a=Editarmov&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+               </td>
+               <td style="background-color: white;">
+                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
+               </td>
           </tr>
       <?php endforeach; ?>
       <?php foreach($this->model->rojoMov() as $r): ?>
           <tr style="background-color: tomato;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -80,6 +87,7 @@
       <?php foreach($this->model->amarilloMov() as $r): ?>
           <tr style="background-color: yellow;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -113,6 +121,7 @@
       <?php foreach($this->model->verdeMov() as $r): ?>
           <tr style="background-color: green;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -134,13 +143,13 @@
               else{
                   echo $r->Estatus5;
               }
-              ?></td>
-              <td style="background-color: white;">
-                   <a href="?c=Transporte&a=Editarmov&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
-              </td>
-              <td style="background-color: white;">
-                 <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
-              </td>
+               ?></td>
+               <td style="background-color: white;">
+                    <a href="?c=Transporte&a=Editarmov&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+               </td>
+               <td style="background-color: white;">
+                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
+               </td>
           </tr>
       <?php endforeach; ?>
     </tbody>

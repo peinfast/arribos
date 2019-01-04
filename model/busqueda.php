@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Informacion General</title>
@@ -24,6 +24,8 @@
 
         //get content from database
         $query = $db->query("SELECT * FROM folios WHERE Folio= '".$_POST['buscar']."'");
+        $querydos = $db->query("SELECT * FROM respaldo WHERE Folio= '".$_POST['buscar']."'");
+        $rowdos = mysqli_fetch_array($querydos);
         $row = mysqli_fetch_array($query);
         ?><table><tbody><?php
         echo 'Folio: '.$row['Folio'].'<br />';
@@ -37,7 +39,6 @@
         echo 'Operador: '.$row['Operador'].'<br />';
         echo 'Cantidad de Unidades: '.$row['CantidadUnidades'].'<br />';
         echo 'Cortina: '.$row['Cortina'].'<br />';
-        echo 'Estatus del Producto: '.$row['EstatusProducto'].'<br />';
         echo 'Usuario del Registro: '.$row['Usuario1'].'<br />';
         echo 'Fecha del Registro: '.$row['FH_Cedic'].'<br />';
         echo 'Estatus: '.$row['Estatus'].'<br />';

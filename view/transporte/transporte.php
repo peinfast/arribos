@@ -10,7 +10,6 @@
             <th style="width:180px;">Destino</th>
             <th style="width:180px;">Servicio</th>
             <th style="width:180px;">FH Carga</th>
-            <th style="width:180px;">Estatus Producto</th>
             <th style="width:180px;">Estatus</th>
 
         </tr>
@@ -27,7 +26,6 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->EstatusProducto; ?></td>
             <td><?php
             if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                 echo $r->Estatus;
@@ -56,7 +54,6 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->EstatusProducto; ?></td>
             <td><?php
             if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                 echo $r->Estatus;
@@ -85,7 +82,6 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->EstatusProducto; ?></td>
             <td><?php
             if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                 echo $r->Estatus;
@@ -114,7 +110,6 @@
             <td><?php echo $r->Destino; ?></td>
             <td><?php echo $r->Servicio; ?></td>
             <td><?php echo $r->FH_Carga; ?></td>
-            <td><?php echo $r->EstatusProducto; ?></td>
             <td><?php
                 if (($r->Estatus2==null) AND ($r->Estatus3==null) AND ($r->Estatus4==null) AND ($r->Estatus5==null)) {
                     echo $r->Estatus;

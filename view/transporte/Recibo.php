@@ -5,6 +5,7 @@
     <thead>
         <tr>
           <th style="width:180px;">Folio</th>
+          <th style="width:180px;">Area</th>
           <th style="width:180px;">Cliente</th>
           <th style="width:180px;">Marca</th>
           <th style="width:180px;">Destino</th>
@@ -19,6 +20,7 @@
       <?php foreach($this->model->azulRec() as $r): ?>
           <tr style="background-color: blue;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -51,6 +53,7 @@
       <?php foreach($this->model->rojoRec() as $r): ?>
           <tr style="background-color: tomato;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -83,6 +86,7 @@
       <?php foreach($this->model->amarilloRec() as $r): ?>
           <tr style="background-color: yellow;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>
@@ -116,6 +120,7 @@
       <?php foreach($this->model->verdeRec() as $r): ?>
           <tr style="background-color: green;">
               <td><?php echo $r->Folio; ?></td>
+              <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
               <td><?php echo $r->Marca; ?></td>
               <td><?php echo $r->Destino; ?></td>

@@ -1,9 +1,4 @@
 <?php
-    header('Content-Type: text/html; charset=UTF-8');
-    //Iniciar una nueva sesión o reanudar la existente.
-    session_start();
-    //Si existe la sesión "cliente"..., la guardamos en una variable.
-    if (!isset($_SESSION['txtusuario'])){
       require_once 'model/database.php';
 
       $controller = 'transporte';
@@ -30,9 +25,6 @@
           // Llama la accion
           call_user_func( array( $controller, $accion ) );
       }
-    }else{
- header('Location: index.html');//Aqui lo redireccionas al lugar que quieras.
-     die() ;
 
-    }
+
 ?>

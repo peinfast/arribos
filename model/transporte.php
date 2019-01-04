@@ -231,7 +231,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Estatus5 != 'Liberado de Cedic' and Area='L1bre' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='L1bre' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -247,7 +247,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='L1bre' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='L1bre' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -263,7 +263,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='L1bre' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='L1bre' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -279,7 +279,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -295,7 +295,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -311,7 +311,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Logistica Inversa' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -327,7 +327,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Movilidad' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Movilidad' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -343,7 +343,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Movilidad' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Movilidad' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -359,7 +359,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Movilidad' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Movilidad' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -375,7 +375,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Proyectos' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Proyectos' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -391,7 +391,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Proyectos' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Proyectos' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -407,7 +407,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Proyectos' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Proyectos' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -455,7 +455,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Recibo' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Recibo' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -471,7 +471,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Retail' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE FH_Carga < now() and Area='Retail' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -487,7 +487,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Retail' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) < FH_Carga and Area='Retail' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -503,7 +503,7 @@ class Transporte
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Retail' and Estatus5 != 'Liberado de Cedic' order by FH_Carga ");
+$stm = $this->pdo->prepare("SELECT * FROM folios WHERE DATE_ADD(NOW(), INTERVAL 2 HOUR) > FH_Carga AND now() < FH_Carga and Area='Retail' and Estatus5 != 'Liberado de Cedic' and Estatus2!='En patio' order by FH_Carga ");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -588,29 +588,28 @@ class Transporte
 		{
 
 			//$date = date('Y-m-d H:i:s');
-			$sql = "UPDATE folios  SET Estatus2 = ?, FH_Arribo = now(), Usuario2 = ?, Observaciones2 = ? WHERE Folio = ?";
-			$mail = "Prueba de mensaje";
+			$sql = "UPDATE folios  SET Estatus2 = ?, FH_Arribo = now(), Usuario2 = ?, Observaciones2 = ? WHERE Folio = ? and Estatus='Por arribar' and Estatus2!='En patio'";
+			$mail = "Observaciones: ".$data->Observaciones2;
 			//Titulo
-			$titulo = "Cambio de Estatus del Folio: ".$Folio." a En patio";
+			$titulo = "Cambio de Estatus del Folio: ".$data->Folio." a En patio";
 			//cabecera
 			$headers = "Control de Arribos-Version: 1.0\r\n";
 			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 			//dirección del remitente
 			$headers .= "From: Control de Arribos < peinfast@gmail.com >\r\n";
 			//Enviamos el mensaje a tu_dirección_email
-			$bool = mail("Diego.Hernandez@ingrammicro.com",$titulo,$mail,$headers);
+			$bool = mail("Cristian.Barrera@ingrammicro.com",$titulo,$mail,$headers);
+			echo'<script type="text/javascript">
+      alert("Error);
+      </script>';
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Estatus2,
-
-							//$data->FH_Arribo,
 							$data->Usuario2,
 							$data->Observaciones2,
 							$data->Folio
-
-
 					)
 				);
 		} catch (Exception $e)
@@ -624,7 +623,7 @@ class Transporte
 
 		try
 		{
-			$sql = "UPDATE folios  SET Estatus3 = ?, Transporte = ?, Operador = ?, Cortina = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus3 = ?, Transporte = ?, Operador = ?, Cortina = ?, FH_Inicio_CarDesc = now(), Usuario3 = ?, Observaciones3 = ? WHERE Folio = ? and Estatus2='En patio' and Estatus3!='En proceso de Carga y Descarga'";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
@@ -651,14 +650,13 @@ class Transporte
 	{
 		try
 		{
-			$sql = "UPDATE folios  SET Estatus4 = ?, EstatusProducto = ?, FH_Conclu_CarDesc = now(), Usuario4 = ?, Observaciones4 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus4 = ?, FH_Conclu_CarDesc = now(), Usuario4 = ?, Observaciones4 = ? WHERE Folio = ? and Estatus3='En proceso de Carga y Descarga' and Estatus4!='Carga/Descarga Concluida'";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
 
 							$data->Estatus4,
-							$data->EstatusProducto,
 							$data->Usuario4,
 							$data->Observaciones4,
 							$data->Folio
@@ -676,7 +674,7 @@ class Transporte
 	{
 		try
 		{
-			$sql = "UPDATE folios  SET Estatus5 = ?, FH_Salida_Caseta = now(), Usuario5 = ?, Observaciones5 = ? WHERE Folio = ?";
+			$sql = "UPDATE folios  SET Estatus5 = ?, FH_Salida_Caseta = now(), Usuario5 = ?, Observaciones5 = ? WHERE Folio = ? and Estatus4='Carga/Descarga Concluida' and Estatus5!='Liberado de Cedic'";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
@@ -712,7 +710,7 @@ class Transporte
 
 		try
 		{
-		$sql = "INSERT INTO folios (Folio, Area, Cliente, Marca, CantidadUnidades, Destino, Servicio, FH_Carga, Estatus, Usuario1, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO folios (Folio, Area, Cliente, Marca, CantidadUnidades, Destino, Servicio, FH_Carga, Estatus, FH_Cedic, Usuario1, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, now(), ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
