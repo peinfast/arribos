@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       <?php foreach($this->model->azulRet() as $r): ?>
-          <tr style="background-color: blue;">
+          <tr style="background-color: MEDIUMSLATEBLUE;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
@@ -42,6 +42,12 @@
                   echo $r->Estatus5;
               }
                ?></td>
+               <td style="background-color: white;">
+                    <a href="?c=Transporte&a=Editarret&id=<?php echo $r->id; ?>"><img src="assets/img/editar.png" width="50"></a>
+               </td>
+               <td style="background-color: white;">
+                  <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?c=Transporte&a=Eliminar&id=<?php echo $r->id; ?>"><img src="assets/img/eliminar.png" width="50"></a>
+               </td>
           </tr>
       <?php endforeach; ?>
       <?php foreach($this->model->rojoRet() as $r): ?>

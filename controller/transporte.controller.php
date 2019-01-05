@@ -39,9 +39,14 @@ class TransporteController{
         require_once 'view/footer.php';
     }
     public function OperacionesL1b(){
+        if(($_SERVER['HTTP_REFERER'])=='control/validar.php') {
         require_once 'view/upl1b.php';
         require_once 'view/transporte/leerl1b.php';
         require_once 'view/footer.php';
+
+         }else {
+          header('Location:index.html');
+        }
     }
     public function Editl1b(){
         require_once 'view/upl1b.php';
@@ -105,7 +110,7 @@ class TransporteController{
     }
     public function L1bre(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/L1bre.php';
+        require_once 'view/transporte/leerl1b.php';
         require_once 'view/footer.php';
     }
     public function L1brem(){
@@ -115,7 +120,7 @@ class TransporteController{
     }
     public function Logistica(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Logistica.php';
+        require_once 'view/transporte/leerli.php';
         require_once 'view/footer.php';
     }
     public function Logisticam(){
@@ -125,7 +130,7 @@ class TransporteController{
     }
     public function Movilidad(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Movilidad.php';
+        require_once 'view/transporte/leermov.php';
         require_once 'view/footer.php';
     }
     public function Movilidadm(){
@@ -135,7 +140,7 @@ class TransporteController{
     }
     public function Proyectos(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Proyecto.php';
+        require_once 'view/transporte/leerpro.php';
         require_once 'view/footer.php';
     }
     public function Proyectosm(){
@@ -145,7 +150,7 @@ class TransporteController{
     }
     public function Recibo(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Recibo.php';
+        require_once 'view/transporte/leerrec.php';
         require_once 'view/footer.php';
     }
     public function Recibom(){
@@ -155,7 +160,7 @@ class TransporteController{
     }
     public function Retail(){
         require_once 'view/arriba.php';
-        require_once 'view/transporte/Retail.php';
+        require_once 'view/transporte/leerret.php';
         require_once 'view/footer.php';
     }
     public function Retailm(){

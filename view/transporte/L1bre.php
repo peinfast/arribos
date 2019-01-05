@@ -16,7 +16,7 @@
     </thead>
     <tbody>
       <?php foreach($this->model->azulL1b() as $r): ?>
-          <tr style="background-color: blue;">
+          <tr style="background-color: MEDIUMSLATEBLUE;">
               <td><?php echo $r->Folio; ?></td>
               <td><?php echo $r->Area; ?></td>
               <td><?php echo $r->Cliente; ?></td>
